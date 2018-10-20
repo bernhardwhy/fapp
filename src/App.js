@@ -3,26 +3,51 @@ import logo from './logo.svg';
 import classes from './App.css';
 import { Route, withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
-import Detail from './Detail/Detail';
+import Home from './Home/Home';
+import Login from './Login/Login';
+// import ExecuteTraining from './ExecuteTraining/ExecuteTraining';
+import TrainingOverview from './TrainingOverview/TrainingOverview';
+import ExecuteTraining from './ExecuteTraining/ExecuteTraining';
+
+import Swipeable from 'react-swipeable'
+
 
 class App extends Component {
+  state = {
+    isAuthenticated: false,
+  }
+
+  componentDidMount() {
+    if (this.state.isAuthenticated) {
+      this.props.history.push('Home');
+    } else {
+      this.props.history.push('/');
+    }
+  }
+
+
+  swiped = (e, deltaX, deltaY, isFlick, velocity) => {
+    if (deltaX < 0) {
+      this.props.history.goBack();
+    }
+  }
+
   render() {
     return (
       <div className={classes.App}>
-        <header className={classes.AppHeader}>
-          <img src={logo} className={classes.AppLogo} alt="logo" />
-          <h1 className={classes.AppTitle}>Welcome to React</h1>
-        </header>
-        <p className={classes.AppIntro}>
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Link style={{ textDecoration: 'none', color: 'inherit' }} to='/detail' >
-          Link to detail
-        </Link>
-        <Route path='/detail' exact component={Detail} />
+        <Swipeable
+          style={{ height: '100%' }}
+          onSwiped={this.swiped} >
+          <Route path='/' exact component={Login} />
+          <Route path='/home' exact component={Home} />
+          <Route path='/training-overview/:id' exact component={TrainingOverview} />
+          <Route path='/execute-training' exact component={ExecuteTraining} />
+        </Swipeable>
       </div>
     );
   }
 }
 
-export default App;
+
+
+export default withRouter(App);

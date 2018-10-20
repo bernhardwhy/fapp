@@ -1,0 +1,259 @@
+{
+    "cod": "200",
+    "trainings": [
+        {
+            "name": "Training 1",
+            "id": "1",
+            "desc": "Pull day",
+            "exercises": [
+                {
+                    "name": "Kreuzheben",
+                    "volume": [
+                        {
+                            "set": 1,
+                            "rep": 5,
+                            "weight": 20
+                        },
+                        {
+                            "set": 2,
+                            "rep": 5,
+                            "weight": 30
+                        },
+                        {
+                            "set": 3,
+                            "rep": 5,
+                            "weight": 35
+                        },
+                        {
+                            "set": 4,
+                            "rep": 5,
+                            "weight": 40
+                        },
+                        {
+                            "set": 5,
+                            "rep": 5,
+                            "weight": 45
+                        }
+                    ]
+                },
+                {
+                    "name": "Latzug",
+                    "volume": [
+                        {
+                            "set": 1,
+                            "rep": 12,
+                            "weight": 30
+                        },
+                        {
+                            "set": 2,
+                            "rep": 10,
+                            "weight": 35
+                        },
+                        {
+                            "set": 3,
+                            "rep": 8,
+                            "weight": 35
+                        }
+                    ]
+                },
+                {
+                    "name": "Seitheben",
+                    "volume": [
+                        {
+                            "set": 1,
+                            "rep": 12,
+                            "weight": 3
+                        },
+                        {
+                            "set": 2,
+                            "rep": 12,
+                            "weight": 4.5
+                        }
+                    ]
+                },
+                {
+                    "name": "Frontheben",
+                    "volume": [
+                        {
+                            "set": 1,
+                            "rep": 12,
+                            "weight": 3
+                        },
+                        {
+                            "set": 2,
+                            "rep": 10,
+                            "weight": 4.5
+                        },
+                        {
+                            "set": 3,
+                            "rep": 8,
+                            "weight": 4.5
+                        }
+                    ]
+                },
+                {
+                    "name": "Bizepscurl",
+                    "volume": [
+                        {
+                            "set": 1,
+                            "rep": 12,
+                            "weight": 5
+                        },
+                        {
+                            "set": 2,
+                            "rep": 10,
+                            "weight": 5
+                        },
+                        {
+                            "set": 3,
+                            "rep": 8,
+                            "weight": 5
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Training 2",
+            "id": "2",
+            "desc": "Push day",
+            "exercises": [
+                {
+                    "name": "Kniebeuge",
+                    "volume": [
+                        {
+                            "set": 1,
+                            "rep": 5,
+                            "weight": 20
+                        },
+                        {
+                            "set": 2,
+                            "rep": 5,
+                            "weight": 30
+                        },
+                        {
+                            "set": 3,
+                            "rep": 5,
+                            "weight": 35
+                        },
+                        {
+                            "set": 4,
+                            "rep": 5,
+                            "weight": 35
+                        },
+                        {
+                            "set": 5,
+                            "rep": 5,
+                            "weight": 35
+                        }
+                    ]
+                },
+                {
+                    "name": "Butterfly",
+                    "volume": [
+                        {
+                            "set": 1,
+                            "rep": 12,
+                            "weight": 2.5
+                        },
+                        {
+                            "set": 2,
+                            "rep": 12,
+                            "weight": 2.5
+                        }
+                    ]
+                },
+                {
+                    "name": "Bankdrücken",
+                    "volume": [
+                        {
+                            "set": 1,
+                            "rep": 5,
+                            "weight": 20
+                        },
+                        {
+                            "set": 2,
+                            "rep": 5,
+                            "weight": 30
+                        },
+                        {
+                            "set": 3,
+                            "rep": 5,
+                            "weight": 35
+                        },
+                        {
+                            "set": 4,
+                            "rep": 5,
+                            "weight": 35
+                        },
+                        {
+                            "set": 5,
+                            "rep": 5,
+                            "weight": 35
+                        }
+                    ]
+                },
+                {
+                    "name": "Schulterdrücken",
+                    "volume": [
+                        {
+                            "set": 1,
+                            "rep": 12,
+                            "weight": 2.5
+                        },
+                        {
+                            "set": 2,
+                            "rep": 10,
+                            "weight": 2.5
+                        },
+                        {
+                            "set": 3,
+                            "rep": 8,
+                            "weight": 2.5
+                        }
+                    ]
+                },
+                {
+                    "name": "Reverse Butterfly",
+                    "volume": [
+                        {
+                            "set": 1,
+                            "rep": 12,
+                            "weight": 5
+                        },
+                        {
+                            "set": 2,
+                            "rep": 10,
+                            "weight": 5
+                        },
+                        {
+                            "set": 3,
+                            "rep": 8,
+                            "weight": 5
+                        }
+                    ]
+                },
+                {
+                    "name": "Enges Bankdrücken",
+                    "volume": [
+                        {
+                            "set": 1,
+                            "rep": 12,
+                            "weight": 17.5
+                        },
+                        {
+                            "set": 2,
+                            "rep": 10,
+                            "weight": 17.5
+                        },
+                        {
+                            "set": 3,
+                            "rep": 8,
+                            "weight": 17.5
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

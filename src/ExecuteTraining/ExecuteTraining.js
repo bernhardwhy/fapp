@@ -21,9 +21,14 @@ import MobileStepper from '@material-ui/core/MobileStepper';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 
-import Slider from '@material-ui/lab/Slider';
-
 import Input from '@material-ui/core/Input';
+
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+
+import FormControl from '@material-ui/core/FormControl';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import FormHelperText from '@material-ui/core/FormHelperText';
 
 const styles = {
     root: {
@@ -122,32 +127,63 @@ class ExecuteTraining extends Component {
                 </div>
 
                 {this.props.actualTraining ?
-                    <div className={classes.listRoot}>
-                        <List>
-                            {this.state.activeStep}
-                            <ListItem
-                                key={activeExercise[this.state.activeStep].set}>
-                                <Avatar>
-                                    <ImageIcon />
-                                </Avatar>
-                                <ListItemText primary={'set:' + activeExercise[this.state.activeStep].set} secondary={activeExercise[this.state.activeStep].rep + 'wdh, ' + activeExercise[this.state.activeStep].weight + 'Kg'} />
-                                <Input
-                                    onChange={this.handleWeightInput}
-                                    placeholder={activeExercise[this.state.activeStep].weight}
-                                    value={this.state.weightData}
-                                    className={classes.input}
-                                    inputProps={{
-                                        'aria-label': 'Description',
-                                    }}
-                                />
-                            </ListItem>
-                        </List>
-                    </div> : null
+                    <Card>
+                        <div>
+                            <CardContent className={classes.content}>
+                                <Typography component="h5" variant="h5">
+                                    Set {this.state.activeStep + 1} from {activeExercise.length}
+                                </Typography>
+                                <Typography variant="subtitle1" color="textSecondary">
+                                    {activeExercise[this.state.activeStep].rep + 'wdh, ' + activeExercise[this.state.activeStep].weight + 'Kg'}
+                                </Typography>
+                                <Typography variant="subtitle1" color="textSecondary">
+                                    <FormControl
+                                        aria-describedby="weight-helper-text"
+                                    >
+                                        <Input
+                                            type="number"
+                                            name="txtNumber"
+                                            id="adornment-weight"
+                                            value={this.state.weightData}
+                                            onChange={this.handleWeightInput}
+                                            endAdornment={<InputAdornment position="end">Kg</InputAdornment>}
+                                            inputProps={{
+                                                'aria-label': 'Weight',
+                                            }}
+                                        />
+                                        <FormHelperText id="weight-helper-text">Weight</FormHelperText>
+                                    </FormControl>
+                                </Typography>
+                            </CardContent>
+                        </div>
+                    </Card>
+                    // <div className={classes.listRoot}>
+                    //     <List>
+                    //         {this.state.activeStep}
+                    //         <ListItem
+                    //             key={activeExercise[this.state.activeStep].set}>
+                    //             <Avatar>
+                    //                 <ImageIcon />
+                    //             </Avatar>
+                    //             <ListItemText primary={'set:' + activeExercise[this.state.activeStep].set} secondary={activeExercise[this.state.activeStep].rep + 'wdh, ' + activeExercise[this.state.activeStep].weight + 'Kg'} />
+                    //             <Input
+                    //                 onChange={this.handleWeightInput}
+                    //                 placeholder={activeExercise[this.state.activeStep].weight}
+                    //                 value={this.state.weightData}
+                    //                 className={classes.input}
+                    //                 inputProps={{
+                    //                     'aria-label': 'Description',
+                    //                 }}
+                    //             />
+                    //         </ListItem>
+                    //     </List>
+                    // </div>
+                    : null
                 }
                 {this.props.actualTraining ?
                     <MobileStepper
                         variant="progress"
-                        steps={activeExercise.length}
+                        steps={activeExercise.length + 1}
                         position="static"
                         activeStep={this.state.activeStep}
                         className={classes.root}

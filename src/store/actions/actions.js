@@ -31,15 +31,25 @@ export const saveWorkouts = (workoutToSave) => {
 }
 
 export const getWorkouts = (workout) => {
-    let url = 'https://fapp-c83e2.firebaseio.com/finishedWorkouts.json?orderBy="name"&limitToFirst=1&equalTo="' + workout + '"';
+    const url = 'https://fapp-c83e2.firebaseio.com/finishedWorkouts.json?orderBy="name"&limitToFirst=10&equalTo="' + workout + '"';
     return dispatch => {
         axios.get(url)
             .then(response => {
+                console.log('training request', response);
+                var propValueArray = [];
+                let propValue = null;
                 for (var propName in response.data) {
                     if (response.data.hasOwnProperty(propName)) {
-                        var propValue = response.data[propName];
-                        console.log(propValue);
-
+                        propValueArray.push(response.data[ propName ]);
+                        console.log(propValueArray);
+                        if (!propValue) {
+                            propValue = response.data[ propName ];
+                        }
+                        const dateInArray = Date.parse(response.data[ propName ].finishedDate);
+                        const dateSelectedProp = Date.parse(propValue.finishedDate);
+                        if (dateSelectedProp < dateInArray) {
+                            propValue = response.data[ propName ];
+                        }
                     }
                 }
                 dispatch(setActualTraining(propValue));
@@ -72,5 +82,3 @@ export const postWorkout = (finishedWorkout) => {
             .catch(error => console.log(error));
     }
 }
-
-

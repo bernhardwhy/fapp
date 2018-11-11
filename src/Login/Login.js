@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { setBreadCrumbs } from '../store/actions/actions';
 import Button from '@material-ui/core/Button';
 
-
 class Login extends Component {
 
     handleLogin = () => {
@@ -16,11 +15,11 @@ class Login extends Component {
 
     render() {
         return (
-            <div style={{ display: 'flex', width: '100%', height: '100%', flexDirection: 'column', justifyContent: 'center' }}>
+            <div style={ { display: 'flex', width: '100%', height: '100%', flexDirection: 'column', justifyContent: 'center' } }>
                 <div>
-                    <Button onClick={this.handleLogin} color="primary" variant="contained">
+                    <Button onClick={ this.handleLogin } color="primary" variant="contained">
                         Login
-                </Button>
+                    </Button>
                 </div>
 
             </div>
@@ -39,6 +38,5 @@ const mapDispatchToProps = dispatch => {
         onSetBreadCrumbs: (breadCrumbs) => dispatch(setBreadCrumbs(breadCrumbs)),
     };
 }
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

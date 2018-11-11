@@ -11,7 +11,6 @@ import ExecuteTraining from './ExecuteTraining/ExecuteTraining';
 
 import Swipeable from 'react-swipeable'
 
-
 class App extends Component {
   state = {
     isAuthenticated: false,
@@ -25,7 +24,6 @@ class App extends Component {
     }
   }
 
-
   swiped = (e, deltaX, deltaY, isFlick, velocity) => {
     if (deltaX < 0) {
       this.props.history.goBack();
@@ -34,20 +32,18 @@ class App extends Component {
 
   render() {
     return (
-      <div className={classes.App}>
-        <Swipeable
-          style={{ height: '100%' }}
-          onSwiped={this.swiped} >
-          <Route path='/' exact component={Login} />
-          <Route path='/home' exact component={Home} />
-          <Route path='/training-overview/:id' exact component={TrainingOverview} />
-          <Route path='/execute-training' exact component={ExecuteTraining} />
-        </Swipeable>
-      </div>
+        <div className={ classes.App }>
+            <Swipeable
+          style={ { height: '100%' } }
+          onSwiped={ this.swiped } >
+                <Route path='/' exact component={ Login } />
+                <Route path='/home' exact component={ Home } />
+                <Route path='/training-overview/:id' exact component={ TrainingOverview } />
+                <Route path='/execute-training' exact component={ ExecuteTraining } />
+            </Swipeable>
+        </div>
     );
   }
 }
-
-
 
 export default withRouter(App);

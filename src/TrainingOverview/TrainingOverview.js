@@ -4,11 +4,6 @@ import { connect } from 'react-redux';
 import { getOffers, setBreadCrumbs, setActualTraining, getWorkouts } from '../store/actions/actions';
 
 import { withStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import Button from '@material-ui/core/Button';
 
 import List from '@material-ui/core/List';
@@ -73,20 +68,6 @@ class TrainingOverview extends Component {
 
         return (
             <div>
-                <div className={ classes.root }>
-                    <AppBar position="static">
-                        <Toolbar>
-                            <IconButton className={ classes.menuButton } color="inherit" aria-label={ this.props.match.pathname }>
-                                <MenuIcon />
-                            </IconButton>
-                            <Typography variant="h6" color="inherit" className={ classes.grow }>
-                                {this.props.breadCrumbs.routeLabel}
-                            </Typography>
-                            <Button color="inherit">Login</Button>
-                        </Toolbar>
-                    </AppBar>
-                </div>
-
                 <div className={ classes.listRoot }>
                     <List>
                         {trainingList}

@@ -8,11 +8,7 @@ import {
 } from '../store/actions/actions';
 
 import { withStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import Button from '@material-ui/core/Button';
 
 import MobileStepper from '@material-ui/core/MobileStepper';
@@ -95,19 +91,6 @@ if (this.state.activeExercise + 1 < this.props.actualTraining.exercises.length) 
 
     return (
         <div>
-            <div className={ classes.root }>
-                <AppBar position="static">
-                    <Toolbar>
-                        <IconButton className={ classes.menuButton } color="inherit" aria-label={ this.props.match.pathname }>
-                            <MenuIcon />
-                        </IconButton>
-                        <Typography variant="h6" color="inherit" className={ classes.grow }>
-                            {this.props.breadCrumbs.routeLabel}
-                        </Typography>
-                        <Button color="inherit">Login</Button>
-                    </Toolbar>
-                </AppBar>
-            </div>
             {activeExercise && activeExercise.map((exercise, index) => {
                 return (
                     <Card>
@@ -175,7 +158,7 @@ const mapStateToProps = state => {
     breadCrumbs: state.breadCrumbs,
 		actualTraining: state.exerciseData,
   };
-};;
+};
 
 const mapDispatchToProps = dispatch => {
 	return {
@@ -183,7 +166,7 @@ const mapDispatchToProps = dispatch => {
 		onSetBreadCrumbs: (breadCrumbs) => dispatch(setBreadCrumbs(breadCrumbs)),
 		onPostWorkout: (finishedWorkout) => dispatch(postWorkout(finishedWorkout)),
   };
-};;
+};
 
 ExecuteTraining.propTypes = {
 	classes: PropTypes.object.isRequired,

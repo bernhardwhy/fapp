@@ -52,7 +52,7 @@ class App extends Component {
                     </Toolbar>
                 </AppBar>
             </div>
-            <Route path='/' exact component={ Login } />
+            <Route path='/' exact component={ Home } />
             <Route path='/home' exact component={ Home } />
             <Route path='/training-overview/:id' exact component={ TrainingOverview } />
             <Route path='/execute-training' exact component={ ExecuteTraining } />

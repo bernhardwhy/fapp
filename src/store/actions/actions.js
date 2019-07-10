@@ -1,6 +1,7 @@
 import * as actionTypes from './actionTypes'
 import * as exData from './exData.json';
 import axios from 'axios';
+import * as firebase from './firebase-config.js';
 
 export const setBreadCrumbs = (breadCrumbs) => {
     return {
@@ -31,6 +32,8 @@ export const saveWorkouts = (workoutToSave) => {
 }
 
 export const getWorkouts = (workout) => {
+    console.log('FIREBASE:', firebase);
+    
     const url = 'https://fapp-c83e2.firebaseio.com/finishedWorkouts.json?orderBy="name"&limitToFirst=10&equalTo="' + workout + '"';
     return dispatch => {
         axios.get(url)

@@ -1,16 +1,9 @@
 version: 2
 jobs:
   build:
+    working_directory: ~/WEbprojekte/Fapp/app
     docker:
-      - image: debian:stretch
-
+      - image: circleci/node:7
     steps:
       - checkout
-
-      - run:
-          name: Greeting
-          command: echo Hello, world.
-
-      - run:
-          name: Print the Current Time
-          command: date
+      - run: npm install
